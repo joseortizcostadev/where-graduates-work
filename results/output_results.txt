@@ -1,0 +1,324 @@
+/System/Library/Frameworks/Python.framework/Versions/2.6/bin/python2.6 /Users/school-station/PycharmProjects/where-do-new-graduates-work/run_model.py
+************************** THIS PROGAM FIND CAUSES ABOUT WHY RECENT GRADUATES CANNOT FIND A JOB IN THEIR AREA OF STUDY RIGHT AFTER THEIR GRADUATION ****************************************************************************
+
+KDD STEPS PERFORMED
+
+1.SELECTION_____________________________________________________________________________________________________:
+stem-dataset-african-american.csv
+stem-dataset-asian.csv
+stem-dataset-hispanic-latino.csv
+stem-dataset-men.csv
+stem-dataset-white.csv
+stem-dataset-woman.csv
+unemployment-by-major.csv
+census-income.csv
+
+2. DATA CLEANING AND PREPROCESING_______________________________________________________________________________  Done. 199523  records preproccesed
+
+2. MINING_______________________________________________________________________________________________________:
+
+Using training Data: 75 % of 199523 = 149642.25
+
+Naives Bayes Classifier is mining the dataset to predict the people on the census that have a bachellor degree using training data of size:  149642.25
+
++-------+--------+-------+------+--------+
+|   TP  |   TN   |   FP  |  FN  | TOTAL  |
++-------+--------+-------+------+--------+
+| 18077 | 116606 | 10315 | 4645 | 149643 |
++-------+--------+-------+------+--------+
+
+
++----------------+---------------+----------------+----------------+----------------+
+|    ACCURACY    |   PRECISION   |     RECALL     |       F1       |   SPECIFICTY   |
++----------------+---------------+----------------+----------------+----------------+
+| 0.900028735056 | 0.63669343477 | 0.795572572837 | 0.707320890558 | 0.918728973141 |
++----------------+---------------+----------------+----------------+----------------+
+
+Preparing testing data............
+
+Using testing Data: 15 % of 199523 = 29928.45
+
+Naives Bayes Classifier is mining the dataset to predict the people on the census that have a bachellor degree using testing data of size:  29928.45
+
++------+-------+------+-----+-------+
+|  TP  |   TN  |  FP  |  FN | TOTAL |
++------+-------+------+-----+-------+
+| 4156 | 22844 | 2151 | 777 | 29928 |
++------+-------+------+-----+-------+
+
+
++----------------+----------------+----------------+----------------+----------------+
+|    ACCURACY    |   PRECISION    |     RECALL     |       F1       |   SPECIFICTY   |
++----------------+----------------+----------------+----------------+----------------+
+| 0.902165196472 | 0.658950372602 | 0.842489357389 | 0.739501779359 | 0.913942788558 |
++----------------+----------------+----------------+----------------+----------------+
+
+
+Absolute errors table between training and testing measures.........
+
++-------------------------+--------------------------+-----------------------+-------------------+---------------------------+
+| ACCURACY ABSOLUTE ERROR | PRECISION ABSOLUTE ERROR | RECALL ABSOLUTE ERROR | F1 ABSOLUTE ERROR | SPECIFICTY ABSOLUTE ERROR |
++-------------------------+--------------------------+-----------------------+-------------------+---------------------------+
+|     0.00213646141543    |     0.0222569378315      |    0.0469167845521    |  0.0321808888011  |      0.00478618458306     |
++-------------------------+--------------------------+-----------------------+-------------------+---------------------------+
+
+--------------Validating erformance of the classifier with K-FOLD-CROSS-VALIDATION WITH K=10 WITH EVALUATION DATA SIZE: ----------- 29928.45
+
+Using evaluation Data: 15 % of 199523 = 29928.45
+Running K-Fold Cross Validation with k= 10 with Naive Bayes Classifier
+fold: 1 accuracy: 0.904714142427
+fold: 2 accuracy: 0.904777814901
+fold: 3 accuracy: 0.900801603206
+fold: 4 accuracy: 0.899833055092
+fold: 5 accuracy: 0.89652870494
+fold: 6 accuracy: 0.909242575909
+fold: 7 accuracy: 0.904571237905
+fold: 8 accuracy: 0.902967655885
+fold: 9 accuracy: 0.898
+fold: 10 accuracy: 0.902032655781
+
++----------------+---------------+----------------+----------------+----------------+
+|    ACCURACY    |   PRECISION   |     RECALL     |       F1       |   SPECIFICTY   |
++----------------+---------------+----------------+----------------+----------------+
+| 0.902346944605 | 0.68899005745 | 0.912829604707 | 0.785257378247 | 0.899716263896 |
++----------------+---------------+----------------+----------------+----------------+
+
+---------------- Predicting Bachelor's field of study using Decision Tree method -------------------------------
+Predicted as bachelor degree for the following areas of study 'Computer Science and Mathematics', 'Engineering', or 'Science Related' bachelors degrees in people with a different occupational area than their area of study
+2928 of 29928.45 , 1.46749998747 % of the data
+
+Table bachelor predictions for Woman
+-------------------------------------------------------------------------------------
++-------------------------+----------------------------------------------+-------------+-----------------+
+|                         | Computer Science, Mathematics and Statistics | Engineering | Science Related |
++-------------------------+----------------------------------------------+-------------+-----------------+
+| Predicted area of study |                    34.73                     |    20.83    |       0.00      |
++-------------------------+----------------------------------------------+-------------+-----------------+
+
+
+Table bachelor predictions for Men
+-------------------------------------------------------------------------------------
++-------------------------+----------------------------------------------+-------------+-----------------+
+|                         | Computer Science, Mathematics and Statistics | Engineering | Science Related |
++-------------------------+----------------------------------------------+-------------+-----------------+
+| Predicted area of study |                    23.91                     |     2.77    |       0.00      |
++-------------------------+----------------------------------------------+-------------+-----------------+
+
+
+Table bachelor predictions for White
+-------------------------------------------------------------------------------------
++-------------------------+----------------------------------------------+-------------+-----------------+
+|                         | Computer Science, Mathematics and Statistics | Engineering | Science Related |
++-------------------------+----------------------------------------------+-------------+-----------------+
+| Predicted area of study |                    43.58                     |    16.67    |       0.00      |
++-------------------------+----------------------------------------------+-------------+-----------------+
+
+
+Table bachelor predictions for Hispanic-Latino
+-------------------------------------------------------------------------------------
++-------------------------+----------------------------------------------+-------------+-----------------+
+|                         | Computer Science, Mathematics and Statistics | Engineering | Science Related |
++-------------------------+----------------------------------------------+-------------+-----------------+
+| Predicted area of study |                     0.75                     |     0.27    |       0.20      |
++-------------------------+----------------------------------------------+-------------+-----------------+
+
+
+Table bachelor predictions for African-American
+-------------------------------------------------------------------------------------
++-------------------------+----------------------------------------------+-------------+-----------------+
+|                         | Computer Science, Mathematics and Statistics | Engineering | Science Related |
++-------------------------+----------------------------------------------+-------------+-----------------+
+| Predicted area of study |                     3.11                     |     2.22    |       0.00      |
++-------------------------+----------------------------------------------+-------------+-----------------+
+
+
+Table bachelor predictions for Asian
+-------------------------------------------------------------------------------------
++-------------------------+----------------------------------------------+-------------+-----------------+
+|                         | Computer Science, Mathematics and Statistics | Engineering | Science Related |
++-------------------------+----------------------------------------------+-------------+-----------------+
+| Predicted area of study |                     2.05                     |     0.41    |       0.00      |
++-------------------------+----------------------------------------------+-------------+-----------------+
+
+
+TABLE OF IMPURITIES
+---------------------------------------------------------------------------------------
++----------------------+----------------+-----------------+----------------+------------------+------------------+----------------+
+|                      |     WOMAN      |       MEN       |     WHITE      | HISPANIC_LATINO  | AFRICAN_AMERICAN |     ASIAN      |
++----------------------+----------------+-----------------+----------------+------------------+------------------+----------------+
+|       ENTROPY        | 0.249826961267 | 0.0706700010292 | 0.224979800868 | 0.00123357610616 | 0.0189803646713  | 0.003735722326 |
+|     GINI_INDEXES     | 0.835954879774 |  0.942079745401 | 0.782307250142 |  0.999931880618  |  0.998541265416  | 0.999563289438 |
+| CLASSIFICATION_ERROR | 0.652663934426 |  0.760928961749 | 0.564207650273 |  0.992486338798  |  0.968920765027  | 0.979508196721 |
++----------------------+----------------+-----------------+----------------+------------------+------------------+----------------+
+
+--------------------- Clustering data to determine patterns about people with a bachelor degree in 'Computer Science and Mathematics', 'Engineering', or 'Science Related' that are not working in their area of study ---------------
+
+------------------ CLUSTERS OF PEOPLE PREDICTED WITH BACHELOR IN COMPUTER SCIENCE, MATHEMATICS, AND STATISTICS CLUSTERED  ---------------------------
+
+Table Clusters Occupational Area Percentage for People with a Bachelor in Computer Science, Mathematics and Statistics
+
++---------------+----------------------------+------------------------+----------------+---------------------------------+--------------------------------+--------------------------------+-------------------------------------+
+| other service | private household services | professional specialty |     sales      | technicians and related support | executive admin and managerial | adm support including clerical | precision production craft & repair |
++---------------+----------------------------+------------------------+----------------+---------------------------------+--------------------------------+--------------------------------+-------------------------------------+
+| 7.96019900498 |       0.995024875622       |     58.2089552239      | 0.995024875622 |          5.47263681592          |          15.92039801           |         7.96019900498          |            2.48756218905            |
++---------------+----------------------------+------------------------+----------------+---------------------------------+--------------------------------+--------------------------------+-------------------------------------+
+
+Table Clusters Gender Percentage for People with a Bachelor in Computer Science, Mathematics and Statistics
+
++---------------------------+---------------+---------------+
+| asian or pacific islander |     white     |     black     |
++---------------------------+---------------+---------------+
+|       5.47263681592       | 91.5422885572 | 2.98507462687 |
++---------------------------+---------------+---------------+
+
+Table Clusters Employment Percentage for People with a Bachelor in Computer Science, Mathematics and Statistics
+
++-------------------------------------------+---------------------------------------------+------------------------------------+-----------------------------------+---------------------------------------------+
+| native- born abroad of american parent(s) | native- born in puerto rico or u s outlying | foreign born- not a citizen of u s | native- born in the united states | foreign born- u s citizen by naturalization |
++-------------------------------------------+---------------------------------------------+------------------------------------+-----------------------------------+---------------------------------------------+
+|               0.995024875622              |                0.497512437811               |            4.4776119403            |           88.0597014925           |                5.97014925373                |
++-------------------------------------------+---------------------------------------------+------------------------------------+-----------------------------------+---------------------------------------------+
+
+Table Clusters Employment Percentage for People with a Bachelor in Computer Science, Mathematics and Statistics
+
++--------------------------+---------------------+--------------------------------+------------------------------------+-----------------------+----------------------+
+| children or armed forces | full-time schedules | pt for econ reasons usually pt | pt for non-econ reasons usually ft | unemployed part- time | unemployed full-time |
++--------------------------+---------------------+--------------------------------+------------------------------------+-----------------------+----------------------+
+|      53.2338308458       |    41.7910447761    |         0.497512437811         |           2.98507462687            |     0.497512437811    |    0.995024875622    |
++--------------------------+---------------------+--------------------------------+------------------------------------+-----------------------+----------------------+
+
+Table Clusters Employment Percentage for People with a Bachelor in Computer Science, Mathematics and Statistics
+
++---------------+---------------+---------------+
+|  >25 and <=35 |      <25      |      >35      |
++---------------+---------------+---------------+
+| 66.6666666667 | 9.95024875622 | 23.3830845771 |
++---------------+---------------+---------------+
+
+Table Clusters Employment Percentage for People with a Bachelor in Computer Science, Mathematics and Statistics
+
++---------------+---------------+
+|      male     |     female    |
++---------------+---------------+
+| 18.9054726368 | 81.0945273632 |
++---------------+---------------+
+
+------------------ CLUSTERS OF PEOPLE PREDICTED WITH BACHELOR IN ENGINEERING  ---------------------------
+
+Table Clusters Occupational Area Percentage for People with a Bachelor in Engineering
+
++---------------------+---------------+------------------------+--------------------------------+--------------------------------+
+| protective services | other service | professional specialty | adm support including clerical | executive admin and managerial |
++---------------------+---------------+------------------------+--------------------------------+--------------------------------+
+|    5.55555555556    | 5.55555555556 |     66.6666666667      |         11.1111111111          |         11.1111111111          |
++---------------------+---------------+------------------------+--------------------------------+--------------------------------+
+
+Table Clusters Gender Percentage for People with a Bachelor in Engineering
+
++---------------------------+---------------+---------------+-----------------------------+
+| asian or pacific islander |     other     |     black     | amer indian aleut or eskimo |
++---------------------------+---------------+---------------+-----------------------------+
+|       16.6666666667       | 5.55555555556 | 72.2222222222 |        5.55555555556        |
++---------------------------+---------------+---------------+-----------------------------+
+
+Table Clusters Employment Percentage for People with a Bachelor in Computer Science, Mathematics and Statistics
+
++---------------------------------------------+------------------------------------+-----------------------------------+
+| foreign born- u s citizen by naturalization | foreign born- not a citizen of u s | native- born in the united states |
++---------------------------------------------+------------------------------------+-----------------------------------+
+|                11.1111111111                |           16.6666666667            |           72.2222222222           |
++---------------------------------------------+------------------------------------+-----------------------------------+
+
+Table Clusters Employment Percentage for People with a Bachelor in Engineering
+
++---------------------+--------------------------------+--------------------------+
+| full-time schedules | pt for econ reasons usually pt | children or armed forces |
++---------------------+--------------------------------+--------------------------+
+|    55.5555555556    |         5.55555555556          |      38.8888888889       |
++---------------------+--------------------------------+--------------------------+
+
+Table Clusters Employment Percentage for People with a Bachelor in Computer Science, Mathematics and Statistics
+
++---------------+---------------+---------------+
+|  >25 and <=35 |      <25      |      >35      |
++---------------+---------------+---------------+
+| 77.7777777778 | 5.55555555556 | 16.6666666667 |
++---------------+---------------+---------------+
+
+Table Clusters Employment Percentage for People with a Bachelor in Computer Science, Mathematics and Statistics
+
++--------+
+| female |
++--------+
+| 100.0  |
++--------+
+
+------------------ CLUSTERS OF PEOPLE PREDICTED WITH BACHELOR IN SCIENCE RELATED FIELDS ( HEALTH SERVICES NOT INCLUDED )  ---------------------------
+
+Table Clusters Occupational Area Percentage for People with a Bachelor in Computer Science, Mathematics and Statistics
+
++-------------------+
+|   DATA CLUSTERED  |
++-------------------+
+| NO CLUSTERS FOUND |
++-------------------+
+
+Table Clusters Gender Percentage for People with a Bachelor in Computer Science, Mathematics and Statistics
+
++-------------------+
+|   DATA CLUSTERED  |
++-------------------+
+| NO CLUSTERS FOUND |
++-------------------+
+
+Table Clusters Employment Percentage for People with a Bachelor in Computer Science, Mathematics and Statistics
+
++-------------------+
+|   DATA CLUSTERED  |
++-------------------+
+| NO CLUSTERS FOUND |
++-------------------+
+
+Table Clusters Employment Percentage for People with a Bachelor in Computer Science, Mathematics and Statistics
+
++-------------------+
+|   DATA CLUSTERED  |
++-------------------+
+| NO CLUSTERS FOUND |
++-------------------+
+
+Table Clusters Employment Percentage for People with a Bachelor in Computer Science, Mathematics and Statistics
+
++-------------------+
+|   DATA CLUSTERED  |
++-------------------+
+| NO CLUSTERS FOUND |
++-------------------+
+
+
+---------------- PATTERNS PROFILES FROM RESULTS (HIGHEST, AVERAGE, LOWER ) --------------------------------------
+
+
++--------------------+------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+|                    | LOWEST PROFILE PREDICTION FOR BACHELOR DEGRESS IN Conputer Science, Mathematics and Statistics | HIGHEST PROFILE PREDICTION FOR BACHELOR DEGRESS IN Conputer Science, Mathematics and Statistics |
++--------------------+------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+|       GENDER       |                                              male                                              |                                              female                                             |
+|        RACE        |                                        African-american                                        |                                              white                                              |
+|     OCUPPATION     |                                   private household services                                   |                                      professional specialty                                     |
+| CITIZENSHIP_STATUS |                          native- born in puerto rico or u s outlying                           |                                native- born in the united states                                |
+|        AGE         |                                              <25                                               |                                           >25 and <=35                                          |
++--------------------+------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+
+
++--------------------+---------------------------------------------------------------+----------------------------------------------------------------+
+|                    | LOWEST PROFILE PREDICTION FOR BACHELOR DEGRESS IN Engineering | HIGHEST PROFILE PREDICTION FOR BACHELOR DEGRESS IN Engineering |
++--------------------+---------------------------------------------------------------+----------------------------------------------------------------+
+|       GENDER       |                             female                            |                             female                             |
+|        RACE        |                             other                             |                        African-american                        |
+|     OCUPPATION     |                      protective services                      |                     professional specialty                     |
+| CITIZENSHIP_STATUS |          foreign born- u s citizen by naturalization          |               native- born in the united states                |
+|        AGE         |                              <25                              |                          >25 and <=35                          |
++--------------------+---------------------------------------------------------------+----------------------------------------------------------------+
+
+
+Process finished with exit code 0
