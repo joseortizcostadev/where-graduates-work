@@ -1,3 +1,5 @@
-where-do-graduates-work ( comming soon )
-
-This project is a project based on data mining, big data and machine learning techniques to find out the causes about why some students, after graduation, are not able to secure a job in their area of study.
+<h1> Where Do Graduates Work </h1>
+<h5> Developed in python 2.7.10 <h5>
+<h5> • To run this project, clone or download it, and then, run the following script inside /where-graduates-work directory:
+    python  __main__.py
+<h5> Your results will be printed out on in your console or terminal <h5>
